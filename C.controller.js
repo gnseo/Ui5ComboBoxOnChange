@@ -38,7 +38,7 @@ sap.ui.define(
           });
       },
 
-      onChange: async function (oEvent) {
+      onChange: function (oEvent) {
         console.log("Change event called");
       },
 
