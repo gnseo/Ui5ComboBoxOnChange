@@ -11,29 +11,42 @@ sap.ui.define(
 
     return Controller.extend("sap.m.sample.InputAssisted.C", {
       onInit: function () {
-        var oModel = new JSONModel(sap.ui.require.toUrl("sap/ui/demo/mock/products.json"));
-        // The default limit of the model is set to 100. We want to show all the entries.
-        oModel.setSizeLimit(100000);
+        var oModel = new JSONModel({
+          myKey: "saxena2",
+          myValue: "saxena",
+          items: [
+            {
+              key: "ekansh2",
+              name: "ekansh",
+            },
+            {
+              key: "saxena2",
+              name: "saxena",
+            },
+          ]
+        });
         this.getView().setModel(oModel);
-        this.getView().setModel(new JSONModel(), "myModel");
-        this.getView()
-          .getModel("myModel")
-          .setData({
-            items: [
-              {
-                key: "ekansh2",
-                name: "ekansh",
-              },
-              {
-                key: "saxena2",
-                name: "saxena",
-              },
-            ]
-          });
       },
 
       onChange: function (oEvent) {
-        console.warn("Change event called", oEvent.getParameters());
+        const params = oEvent.getParameters();
+        console.warn("Change event called", params);
+
+        // this.getView()
+        //   .getModel("myModel")
+        //   .setData({
+        //     myValue: params.newValue,
+        //     items: [
+        //       {
+        //         key: "ekansh2",
+        //         name: "ekansh",
+        //       },
+        //       {
+        //         key: "saxena2",
+        //         name: "saxena",
+        //       },
+        //     ]
+        //   });
       },
     });
   }

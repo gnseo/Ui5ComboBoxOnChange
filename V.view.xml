@@ -4,11 +4,11 @@
 	xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc">
 	<l:VerticalLayout class="sapUiContentPadding" width="100%">
-				<ComboBox value="{myModel>myValue}" change="onChange" items="{
-					path: 'myModel>/items'
-				}">
-						<core:Item key="{myModel>key}" text="{myModel>name}"></core:Item>
-					
+				<ComboBox selectedKey="{/myKey}" value="{/myKey}" change="onChange" items='{/items}'>
+						<core:Item key="{key}" text="{name}"></core:Item>
 				</ComboBox>
+        <Select selectedKey="{/myKey}" value="{/myKey}" change="onChange" items='{/items}'>
+						<core:Item key="{key}" text="{name}"></core:Item>
+				</Select>
 	</l:VerticalLayout>
 </mvc:View>
